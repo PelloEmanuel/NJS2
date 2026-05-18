@@ -1,0 +1,143 @@
+/* ===================================================
+   main.css — Proyecto 3
+   =================================================== */
+
+[data-tema="claro"] {
+  --bg-body: #eef1f7;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #555577;
+  --border-color: #d0d5e0;
+  --item-bg: #f4f6fb;
+  --item-hover: #e6eaf5;
+  --accent: #0d6efd;
+  --tag-bg: #e7f0ff;
+  --tag-text: #0a4fcc;
+}
+
+[data-tema="oscuro"] {
+  --bg-body: #0d0e1a;
+  --bg-card: #1a1b2e;
+  --bg-navbar: #12131f;
+  --text-primary: #dde0f5;
+  --text-secondary: #8890b8;
+  --border-color: #2a2d4a;
+  --item-bg: #20223a;
+  --item-hover: #2a2d50;
+  --accent: #4d78ff;
+  --tag-bg: #1a2255;
+  --tag-text: #7fa0ff;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+#navbar {
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  background-color: var(--item-bg);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control {
+  background-color: var(--item-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(77,120,255,0.15);
+}
+
+/* Tabla de componentes */
+.tabla-url {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.tabla-url td {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.tabla-url td:first-child {
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  width: 110px;
+}
+
+.tabla-url td:last-child {
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  color: var(--accent);
+}
+
+/* Badge de parámetro */
+.param-badge {
+  display: inline-block;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  margin: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Historial */
+.lista-historial {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.list-group-item {
+  background-color: var(--item-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  font-size: 0.82rem;
+  font-family: 'Courier New', monospace;
+}
+
+.list-group-item:hover {
+  background-color: var(--item-hover);
+}
+
+.form-label,
+.form-text {
+  color: var(--text-secondary);
+}
+
+code {
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+@media (max-width: 576px) {
+  .tabla-url td:first-child { width: 80px; }
+}

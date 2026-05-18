@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="claro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio — Proyecto 5</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../style/main.css" />
+</head>
+<body>
+
+  <div id="menu-container"></div>
+
+  <div class="container my-4">
+
+    <div class="hero-section">
+      <h1>Proyecto 5 — Sitio Integrador 🌐</h1>
+      <p class="mb-0">
+        Este sitio reúne todas las funcionalidades desarrolladas en los
+        proyectos anteriores, navegables desde un menú modular.
+      </p>
+    </div>
+
+    <h2 class="mb-3">Secciones del sitio</h2>
+    <div class="row g-3">
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/pages/calculadora.html" class="feature-card card p-3 text-decoration-none">
+          <div class="text-center">
+            <div class="feature-icon">🧮</div>
+            <h5 class="card-title">Calculadora</h5>
+            <p class="card-text text-muted small">
+              Módulo de cálculo del Proyecto 1.
+              Suma, resta, multiplicación y división con historial persistente.
+            </p>
+            <span class="badge bg-secondary">Proyecto 1</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/pages/clima.html" class="feature-card card p-3 text-decoration-none">
+          <div class="text-center">
+            <div class="feature-icon">🌤</div>
+            <h5 class="card-title">Módulo Clima</h5>
+            <p class="card-text text-muted small">
+              Módulo de clima simulado del Proyecto 1.
+              Consulta por ciudad y guarda el historial.
+            </p>
+            <span class="badge bg-secondary">Proyecto 1</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/pages/archivos.html" class="feature-card card p-3 text-decoration-none">
+          <div class="text-center">
+            <div class="feature-icon">📄</div>
+            <h5 class="card-title">Crear Archivos HTML</h5>
+            <p class="card-text text-muted small">
+              Módulo HTTP + File System del Proyecto 2.
+              Genera páginas HTML dinámicamente con Node.js.
+            </p>
+            <span class="badge bg-info text-dark">Proyecto 2</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/pages/url.html" class="feature-card card p-3 text-decoration-none">
+          <div class="text-center">
+            <div class="feature-icon">🔗</div>
+            <h5 class="card-title">Módulo URL</h5>
+            <p class="card-text text-muted small">
+              Módulo URL nativo de Node.js del Proyecto 3.
+              Analiza host, path, params y más.
+            </p>
+            <span class="badge bg-warning text-dark">Proyecto 3</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="/pages/transformar.html" class="feature-card card p-3 text-decoration-none">
+          <div class="text-center">
+            <div class="feature-icon">📦</div>
+            <h5 class="card-title">NPM — Transformar Texto</h5>
+            <p class="card-text text-muted small">
+              Paquetes NPM del Proyecto 4.
+              Convierte texto con upper-case, lower-case y title-case.
+            </p>
+            <span class="badge bg-success">Proyecto 4</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="card mt-4">
+      <div class="card-header">⚙️ Tecnologías integradas</div>
+      <div class="card-body">
+        <div class="row g-2">
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>🟢</span><span>Node.js + Express</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>📁</span><span>File System (fs)</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>🔗</span><span>Módulo URL nativo</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>📦</span><span>NPM: upper/lower/title</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>🎨</span><span>Bootstrap 5 + CSS</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="d-flex align-items-center gap-2 p-2 rounded" style="background:var(--item-bg)">
+              <span>📦</span><span>ES Modules</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../modules/inicio.js"></script>
+</body>
+</html>

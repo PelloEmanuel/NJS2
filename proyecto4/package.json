@@ -1,0 +1,16 @@
+{
+  "name": "proyecto4",
+  "version": "1.0.0",
+  "description": "Uso del gestor NPM: transformaciones de texto con upper-case y otros módulos",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "upper-case": "^2.0.2",
+    "lower-case": "^2.0.2",
+    "title-case": "^4.3.2"
+  }
+}

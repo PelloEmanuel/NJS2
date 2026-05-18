@@ -1,0 +1,1 @@
+[17/5/2026, 04:56:46] https://github.com/user/repo?tab=readme#installation | host: github.com | path: /user/repo

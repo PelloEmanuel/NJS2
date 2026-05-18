@@ -1,0 +1,389 @@
+/* ===================================================
+   main.css — Proyecto 5
+   Estilos compartidos para todas las páginas del sitio
+   =================================================== */
+
+/* ── Variables de tema ─────────────────────────────── */
+[data-tema="claro"] {
+  --bg-body: #f7f8fc;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
+  --text-primary: #1a1d2e;
+  --text-secondary: #5a5e7a;
+  --border-color: #dde1ee;
+  --item-bg: #f0f2fb;
+  --item-hover: #e5e9f8;
+  --accent: #4361ee;
+  --accent-hover: #3451d1;
+  --danger: #ef233c;
+  --success: #06d6a0;
+  --navbar-link: #3a3d5c;
+  --navbar-link-active: #4361ee;
+  --hero-bg: linear-gradient(135deg, #4361ee 0%, #7b2ff7 100%);
+  --card-shadow: 0 2px 12px rgba(67,97,238,0.08);
+}
+
+[data-tema="oscuro"] {
+  --bg-body: #0d0e1c;
+  --bg-card: #1a1b2e;
+  --bg-navbar: #12131f;
+  --text-primary: #e0e2f5;
+  --text-secondary: #8890bb;
+  --border-color: #252740;
+  --item-bg: #1f2035;
+  --item-hover: #262845;
+  --accent: #7b9cff;
+  --accent-hover: #6080ff;
+  --danger: #ff6b6b;
+  --success: #06d6a0;
+  --navbar-link: #b0b5d8;
+  --navbar-link-active: #7b9cff;
+  --hero-bg: linear-gradient(135deg, #2a3a8a 0%, #4a1a7a 100%);
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* ── Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* ── Navbar ────────────────────────────────────────── */
+#navbar {
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#navbar .navbar-brand {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+#navbar .nav-link {
+  color: var(--navbar-link);
+  transition: color 0.2s;
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+}
+
+#navbar .nav-link:hover {
+  color: var(--accent);
+  background-color: var(--item-bg);
+}
+
+#navbar .nav-link.active {
+  color: var(--navbar-link-active);
+  background-color: var(--item-bg);
+}
+
+#navbar .navbar-toggler {
+  border-color: var(--border-color);
+}
+
+/* ── Cards ─────────────────────────────────────────── */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(67,97,238,0.12);
+}
+
+.card-header {
+  background-color: var(--item-bg);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Formularios ───────────────────────────────────── */
+.form-control, .form-select, textarea {
+  background-color: var(--item-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(67,97,238,0.15);
+}
+
+.form-label { color: var(--text-secondary); font-size: 0.9rem; }
+.form-text  { color: var(--text-secondary); }
+
+/* ── Botones ───────────────────────────────────────── */
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* ── Listas ────────────────────────────────────────── */
+.list-group-item {
+  background-color: var(--item-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+  background-color: var(--item-hover);
+}
+
+/* ── Hero (página inicio) ───────────────────────────── */
+.hero-section {
+  background: var(--hero-bg);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ── Cards de funcionalidades (inicio) ──────────────── */
+.feature-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(67,97,238,0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Galería ────────────────────────────────────────── */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.galeria-item {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.galeria-item:hover {
+  background-color: var(--item-hover);
+  transform: scale(1.02);
+}
+
+.galeria-emoji {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.galeria-nombre {
+  font-size: 0.85rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.galeria-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.galeria-btn-del {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.galeria-item:hover .galeria-btn-del {
+  opacity: 1;
+}
+
+/* ── Blog ───────────────────────────────────────────── */
+.post-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ── Calculadora ────────────────────────────────────── */
+.calc-display {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  min-height: 60px;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+
+.calc-display-expr {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  min-height: 22px;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+}
+
+.calc-btn {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--item-bg);
+  color: var(--text-primary);
+  transition: background-color 0.15s, transform 0.1s;
+  cursor: pointer;
+}
+
+.calc-btn:hover {
+  background-color: var(--item-hover);
+  transform: scale(1.03);
+}
+
+.calc-btn:active {
+  transform: scale(0.97);
+}
+
+.calc-btn.op {
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.calc-btn.igual {
+  background: var(--hero-bg);
+  color: white;
+  border: none;
+}
+
+.calc-btn.borrar {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+}
+
+/* ── Sobre mí ───────────────────────────────────────── */
+.perfil-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--hero-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 1rem;
+}
+
+.skill-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--item-hover);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: var(--hero-bg);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 576px) {
+  .hero-section { padding: 2.5rem 1rem; }
+  .galeria-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .calc-btn { padding: 0.5rem; font-size: 1rem; }
+}
+
+/* ─── Extras para las páginas integradas ─────────────── */
+
+/* Lista dinámica con scroll */
+.lista-dinamica {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.lista-dinamica::-webkit-scrollbar { width: 5px; }
+.lista-dinamica::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+/* Resultado de cálculo */
+#resultadoCalculo {
+  color: var(--accent);
+}
+
+/* Resultado clima */
+#resultadoClima {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Inputs y textareas en modo oscuro */
+.form-control::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}

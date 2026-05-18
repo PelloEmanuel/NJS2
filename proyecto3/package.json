@@ -1,0 +1,13 @@
+{
+  "name": "proyecto3",
+  "version": "1.0.0",
+  "description": "Módulo URL: análisis de URLs con host, path, params y más",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

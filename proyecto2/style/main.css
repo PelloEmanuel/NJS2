@@ -1,0 +1,129 @@
+/* ===================================================
+   main.css — Proyecto 2
+   Modo claro/oscuro y estilos generales
+   =================================================== */
+
+[data-tema="claro"] {
+  --bg-body: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --item-bg: #f8f9fa;
+  --item-hover: #e9ecef;
+  --archivo-border: #0d6efd;
+}
+
+[data-tema="oscuro"] {
+  --bg-body: #12131a;
+  --bg-card: #1c1d2b;
+  --bg-navbar: #14151f;
+  --text-primary: #dde1f0;
+  --text-secondary: #9095b0;
+  --border-color: #2e3048;
+  --item-bg: #22243a;
+  --item-hover: #2d3050;
+  --archivo-border: #4d78ff;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+#navbar {
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  background-color: var(--item-bg);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control,
+.form-select,
+textarea {
+  background-color: var(--item-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control:focus,
+textarea:focus {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--archivo-border);
+  box-shadow: 0 0 0 0.2rem rgba(77,120,255,0.15);
+}
+
+.input-group-text {
+  background-color: var(--item-bg);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Tarjeta de cada archivo generado */
+.archivo-card {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--archivo-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.archivo-card:hover {
+  background-color: var(--item-hover);
+}
+
+.archivo-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.archivo-acciones {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.form-text {
+  color: var(--text-secondary);
+}
+
+#iframePreview {
+  background: white;
+}
+
+@media (max-width: 576px) {
+  .archivo-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .archivo-acciones {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

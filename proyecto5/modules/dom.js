@@ -1,0 +1,104 @@
+/**
+ * dom.js — Proyecto 5
+ * Funciones utilitarias de manipulación del DOM compartidas
+ * por todos los módulos de página del proyecto.
+ */
+
+/**
+ * Muestra un mensaje de validación o confirmación.
+ * @param {string} id - ID del elemento
+ * @param {string} texto - Texto a mostrar
+ * @param {boolean} esError - true = rojo, false = verde
+ */
+export function mostrarMensaje(id, texto, esError = true) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = texto;
+  el.className = esError
+    ? 'form-text text-danger mb-2'
+    : 'form-text text-success mb-2';
+  if (texto) setTimeout(() => { el.textContent = ''; }, 4000);
+}
+
+/**
+ * Agrega un ítem a una lista <ul> dinámica con botón de eliminación.
+ * @param {string} listaId - ID del <ul>
+ * @param {string} texto - Texto del ítem
+ * @param {function} onEliminar - Callback al eliminar
+ * @returns {HTMLElement} el <li> creado
+ */
+export function agregarItemLista(listaId, texto, onEliminar) {
+  const lista = document.getElementById(listaId);
+  if (!lista) return null;
+
+  const li   = document.createElement('li');
+  li.className = 'list-group-item';
+
+  const span = document.createElement('span');
+  span.className = 'item-texto';
+  span.style.flex = '1';
+  span.style.wordBreak = 'break-word';
+  span.style.fontSize = '0.83rem';
+  span.textContent = texto;
+
+  const btn = document.createElement('button');
+  btn.textContent = '✕';
+  btn.className = 'btn btn-sm btn-outline-danger ms-2';
+  btn.style.flexShrink = '0';
+
+  btn.addEventListener('click', () => {
+    li.remove();
+    if (typeof onEliminar === 'function') onEliminar(texto);
+  });
+
+  li.style.display = 'flex';
+  li.style.justifyContent = 'space-between';
+  li.style.alignItems = 'center';
+
+  li.appendChild(span);
+  li.appendChild(btn);
+  lista.appendChild(li);
+  lista.scrollTop = lista.scrollHeight;
+
+  return li;
+}
+
+/**
+ * Vacía completamente una lista <ul>.
+ * @param {string} listaId
+ */
+export function vaciarLista(listaId) {
+  const lista = document.getElementById(listaId);
+  if (lista) lista.innerHTML = '';
+}
+
+/**
+ * Carga líneas de texto en una lista dinámica desde un string multilinea.
+ * @param {string} listaId
+ * @param {string} contenido
+ * @param {function} onEliminar
+ */
+export function cargarListaDesdeTexto(listaId, contenido, onEliminar) {
+  vaciarLista(listaId);
+  contenido.split('\n')
+    .filter(l => l.trim())
+    .forEach(l => agregarItemLista(listaId, l, onEliminar));
+}
+
+/**
+ * Descarga texto como archivo .txt en el navegador.
+ * Usa Blob + URL.createObjectURL + <a> dinámico.
+ * @param {string} contenido
+ * @param {string} nombreArchivo
+ */
+export function descargarTxt(contenido, nombreArchivo) {
+  const blob = new Blob([contenido], { type: 'text/plain' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = nombreArchivo;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}

@@ -1,0 +1,16 @@
+{
+  "name": "proyecto5",
+  "version": "1.0.0",
+  "description": "Sitio web integrador con menú modular y todas las funcionalidades de los proyectos 1-4",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "upper-case": "^2.0.2",
+    "lower-case": "^2.0.2",
+    "title-case": "^4.3.2"
+  }
+}

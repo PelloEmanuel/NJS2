@@ -1,0 +1,116 @@
+/* ===================================================
+   main.css — Proyecto 1
+   Estilos para modo claro/oscuro y diseño general
+   =================================================== */
+
+[data-tema="claro"] {
+  --bg-body:     #f4f6f9;
+  --bg-card:     #ffffff;
+  --bg-navbar:   #ffffff;
+  --text-primary:   #1a1a2e;
+  --text-secondary: #555577;
+  --border-color:   #dee2e6;
+  --item-bg:     #f8f9fa;
+  --item-hover:  #e9ecef;
+  --accent:      #0d6efd;
+}
+
+[data-tema="oscuro"] {
+  --bg-body:     #0f0f1a;
+  --bg-card:     #1e1e2e;
+  --bg-navbar:   #16213e;
+  --text-primary:   #e0e0f0;
+  --text-secondary: #aaaacc;
+  --border-color:   #333355;
+  --item-bg:     #2a2a3e;
+  --item-hover:  #3a3a50;
+  --accent:      #6ea8fe;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+#navbar {
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.card-header {
+  background-color: var(--item-bg);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.15);
+}
+
+.form-label,
+.form-text {
+  color: var(--text-secondary);
+}
+
+/* Lista dinámica con scroll */
+.lista-dinamica {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.lista-dinamica::-webkit-scrollbar { width: 5px; }
+.lista-dinamica::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+.list-group-item {
+  background-color: var(--item-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.83rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.list-group-item:hover {
+  background-color: var(--item-hover);
+}
+
+#resultadoCalculo {
+  color: var(--accent);
+}
+
+#resultadoClima {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .card-body { padding: 1rem; }
+}
